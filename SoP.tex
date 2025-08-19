@@ -34,12 +34,12 @@
 
 % School specific macros
 \newcommand{\schoolShort}{Stanford\xspace}
-\newcommand{\school}{Stanford\xspace}
-\newcommand{\schoolLong}{Stanford University\xspace}
+\newcommand{\school}{University of Alberta\xspace}
+\newcommand{\schoolLong}{University of Alberta\xspace}
 
-\newcommand{\profOne}{Prof. Matei Zaharia\xspace}
-\newcommand{\profTwo}{Prof. Christos Kozyrakis\xspace}
-\newcommand{\profThree}{Prof. Jure Leskovec\xspace}
+\newcommand{\profThree}{Prof. Richard Sutton\xspace}
+\newcommand{\profOne}{Prof. Patrick Pilarski\xspace}
+\newcommand{\profTwo}{Prof. Michael Bowling\xspace}
 
 % Creates header for each page
 \usepackage{fancyhdr}
@@ -54,9 +54,9 @@
 }
 \def\header{%
 	\begin{minipage}[]{120pt}
-		\hfill Swapnil Gandhi 		% Applicant Name
+		\hfill Zhijie Xia 		% Applicant Name
     	\par \hfill 				% Formatting boilerplate
-    	CS, PhD, Fall 2022 			% Area, Program, Cycle, Year
+    	CS, Master, Fall 2026 			% Area, Program, Cycle, Year
     \end{minipage}
 }
 \fancyhead[RE,LO]{Statement of Purpose | \schoolLong}
@@ -66,53 +66,63 @@
 
 %% Why do you wish to attend graduate school? What would you like to study? Keep it broad, details come-in later
 
-My decision to pursue graduate studies is a natural outcome of my experiences gained as a master's student at the \textbf{Indian Institute of Science (IISc)} and more recently as a research staff in the \textbf{Systems Group} at \textbf{Microsoft Research India}. I am interested in \textbf{distributed systems} and \textbf{data-intensive cloud computing} — in particular, the system-side problems associated with \textbf{learning and deploying machine learning models at scale}. My research endeavors have resulted in publications at well-known conferences such as \textbf{OSDI [1]} and \textbf{ICDE [3]}. Through graduate studies at \school, I wish to take the first step towards my long term goal of a career in research.
+% Before
+% My decision to pursue graduate studies is a natural outcome of my experiences gained as a researcher at Programmable Reality Lab at University of Calgary (now University of Colorado-Boulder, 
+% following Ryo Suzuki's change of affliation) with my supervisor Ryo Suzuki and more recently a Software Engineer or so called AI infrastructure Engineer at Huawei's Ascend Computing team. 
+% I am interested and looking forward for a ML master at University of Alberta. My current jobs and my current department/product line at Huawei, put huge
+% and absoulute focus on the recent technology break through on the AI, more practical NLP and AIGC domains. 
+% And we are trying our best to create alternative solutions than Nvidia's GPU training for AI models. We try to  provide enough computing power to embrace the new data-driven era which inevidably AI is and will 
+% be essential for every part and aspect of our life. Through graduate studies at \school, 
+% I wish to take the first step towards my long term goal of a career in Research $\&$ Development.
 
+% After
+My pursuit of a Master's in Computer Science at the University of Alberta is driven by my academic and professional experiences, which have highlighted the critical need to deepen my understanding of ML fundamentals. As an undergraduate researcher at the Programmable Reality Lab at University of Calgary under Prof. Ryo Suzuki(now at the University of Colorado-Boulder), I developed an augmented reality system leveraging Google's MediaPipe for computer vision tasks. While this project demonstrated the power of ML as a tool, it also revealed my limited grasp of the underlying algorithms—a gap further underscored in my current role as an AI Infrastructure Engineer at Huawei's Ascend Computing division. There, I develop and optimize low-level software for AI accelerators but recognize that advancing next-generation AI systems requires expertise in core ML principles, particularly deep neural networks and reinforcement learning—areas where Alberta's faculty (e.g., Prof. Richard Sutton) are pioneers. Through this program, I aim to bridge my systems engineering background with advanced ML theory, equipping myself to lead research-driven development in industry.
 
-%% Describe 2-3 past projects that might be relevant to your research interests. (10-12 lines per project)
+%% Before
+% My role is essentially building AI infrastructure for quickly and 
+% efficiently train large language models like Deepseek's llama, 
+% Tencent's Hunyuan, Alibaba's Qwen and ByteDance's Doubao, 
+% and other generative AI models. My part is main the software side of the architectures, which involves
+% writing softwares specically and tailored for the Huawei's Ascend NPU hardware. I have worked on 
+% various different project in Huawei, such as HCCL, Huawei's Collective Communication Library, in competing with Nvida's Collective Communication Library, I have been writing communication and computing operations and 
+% kernels in C++ and Ascend C (Huawei's version of CUDA, hardware accelerated and enabled parallel computing for
+% data processing on top of Huawei's Ascend NPU). In terms, I got a lot familiar with the pytorch library 
+% and has contributed Huawei's pytorch-npu or (Ascend Pytorch Adapter). In summary, my current job 
+% gives the hand-on experience with builiding distributed training software and infrastructure and adding 
+% support for training AI models on Huawei's Ascend NPU hardware. And I got to read a lot of AI related contents  like NLP, transformer and AI stuff like ReLu, softmax those activate function since I have chance to write Ascend C kernel to implement those functions. Also, I do quantization and dequantization on
+% different models like Deepseek's Llma, Alibaba's Qwen, and ByteDance's Doubao to run the model 
+% more lightweightly and faster. However, I always felt that no matter how much we optimize
+% targeting for Huawei's Ascend NPU hardware, the real bottleneck comes from the algorithm itself and 
+% the design of the model. 
+% Our training was also done with good chunk of distributed systems that each 
+% rank/machine would run its training perspective and communicate with each other through the HCCL,
+% Huawei's Collective Communication Library. Also working Huawei's MINDIE, inference engine, to optimize model's efficiency both in space and speed. 
 
-% PROJECT 1: P3 - Distributed Graph Neural Network Training at Scale
+In my role as an AI Infrastructure Engineer at Huawei's Ascend Computing division, I specialize in developing high-performance software for training and deploying large language models (e.g., DeepSeek's Llama, Alibaba's Qwen) on Huawei's Ascend NPU hardware. My work focuses on three key areas: (1) designing and optimizing communication primitives in HCCL (Huawei's Collective Communication Library) to compete with NVIDIA's NCCL, (2) developing compute kernels in Ascend C (Huawei's hardware-specific parallel computing language), and (3) contributing to Huawei's PyTorch-NPU adapter to enable efficient model execution. Through implementing fundamental operations like matrix multiplication and activation functions (ReLU, softmax) at the hardware level, I've gained intimate knowledge of transformer architectures and model quantization techniques.
 
-In the recent past, there has been significant interest in Graph Neural Networks (GNNs)—neural networks that operate on graph structured data. Contemporary systems for \textbf{distributed GNN training} have been heavily influenced by, often building upon, existing systems for DNN training and graph processing systems. While in-principle this might look as the most natural path forward, retrofitting algorithms and leveraging tradeoffs designed in context of DNN training and/or graph processing systems lowers compute resource utilization due to communication stalls and more importantly lead to scalability bottlenecks.
-Based on this, I worked with \textbf{Anand Iyer} to build the $\mathbf{P^{3} ~[1]}$ system, which enables efficient distributed training of GNNs on large input graphs. $P^{3}$, published in \textbf{OSDI 2021}, effectively eliminates communication stalls by independently partitioning the graph along feature and structural dimension; unlike just the structural dimension, as done by most partitioners (e.g., METIS) designed for graph processing systems. Such independent partitioning scheme combined with intra-layer model parallelism and pipelining enables new push-pull based distributed training strategy that can outperform previous data parallel methods, achieving low communication and partitioning overhead, and high resource utilization. We are currently integrating pipelined push-pull parallelism in Microsoft's DeepGraph GNN training engine to train state-of-the-art models with thousands of GPUs.
+However, this systems-level work has revealed a fundamental truth: hardware optimization alone cannot overcome algorithmic limitations. A striking example is the evolution from AlexNet to SqueezeNet - while both achieved similar ImageNet accuracy, SqueezeNet's architectural innovations reduced parameters by 50x without hardware changes. In my own work optimizing Huawei's MINDIE inference engine, I encountered similar constraints: no amount of kernel optimization could compensate for inefficient model architectures. When deploying Alibaba's Qwen model, we achieved only marginal speedups (1.2x) through quantization, while algorithmic improvements in later versions delivered 3x gains with comparable accuracy. This pattern persists in distributed training via HCCL, where communication overhead often stems from model architecture choices rather than hardware limitations. These experiences have convinced me that next-generation AI systems require co-design of algorithms and infrastructure - a perspective I aim to develop through University of Alberta's master of computer science program.
 
-% PROJECT 2: SURGEON - Early-Exit Inference
+While my undergraduate curriculum at the University of Calgary emphasized human-computer interaction over formal ML training, I proactively cultivated research skills that directly translate to machine learning. As first author of a UIST 2023 paper[1], I designed a real-time AR collaboration system that required iterative hypothesis testing—a methodology central to ML research. This involved statistical validation of user interactions and peer-reviewed critique of system performance, mirroring the evaluation rigor needed for ML model development. My honors thesis[3] further demonstrates this translational capacity: inspired by Prof. Joel Reardon's USENIX best paper, I reverse-engineered 35,117 Android applications to build a labeled dataset of 11,978 privileged API calls. This project demanded large-scale data engineering (creating pipelines for APK decompilation and call-graph analysis) and feature engineering (identifying security-relevant patterns)—skills directly applicable to ML data preprocessing. Though my institution lacked ML coursework, these projects taught me to formulate research questions, design validation protocols, and manage complex datasets—core competencies for graduate ML work.
 
-More recently, I have been looking into \textbf{model serving systems}. Large-scale pre-trained language models such as BERT have brought significant improvements to NLP applications but at the cost of heavy computational burden. A growing body of work aims to alleviate this by exploiting the difference in the classification difficulty among samples and early-exiting at different stages of the network. 
-Although early-exit deep neural networks (EE-DNN) have demonstrated promising accuracy–latency trade-offs, we observe that the coarse-grained batching -- an essential technique to increase throughput, becomes suboptimal in effectively ensuring high hardware utilization as samples dynamically exit at different stages of the network. 
-Thus, with \textbf{Anand Iyer}, I have proposed \textbf{SURGEON [2]}, a system which takes EE-DNN model, throughput and latency requirements as inputs, and produces a model partition and service assignment across heterogeneous resources that satisfies SLA constraints using as few GPUs as possible. 
-Key idea in SURGEON is to consolidate two or more batches at partition boundary, thereby creating a larger batch which  improves hardware efficiency. SURGEON uses dynamic programming to adaptively identify when/how EE-DNN layers are to be partitioned and which/how-many devices are required to service each partition. I am currently evaluating the benefits of SURGEON for different EE-DNN model architectures and service-level objectives.
+Crucially, both my undergraduate research experiences revealed the limitations of non-ML approaches. In the HCI project, if it wasn't the object tracking ability provided by Mediapipe, the system would not achieve high expressiveness 
+and made such innovation and contribution. 
+In my My honors thesis, manual analysis of API privileges scaled poorly as 
+research needs to look through all the reverse-engineered Java Bytecode even the application 
+may not be malicious instead of making a model to predict which the application is malicious then 
+make deep analysis on the positive cases. These gaps motivated my transition to ML: I've proven I can execute rigorous research in computer science and made two publication RealityCanvas[1] and RealityEffect[2], and now seek the mathematical foundations and algorithmic tools (through University of Alberta's program) to solve such problems with machine intelligence.
 
-% PROJECT 3: Graphite - Distributed Temporal Graph Processing
+My academic record also demonstrates strong preparation for graduate studies in machine learning, including a 3.92/4.0 GPA in Computer Science at the University of Calgary. Recognizing the importance of mathematical foundations for ML, I dedicated elective credits to advanced mathematics, completing Calculus I-III, Linear Algebra, and Advanced Algebra with perfect grades. This math coursework provided the formal reasoning skills essential for theoretical ML work.
 
-Before MSR, I completed my master's (by research) in Computer and Data Systems at the \textbf{Indian Institute of Science (IISc), Bangalore} advised by \textbf{Yogesh Simmhan}. At IISc, my thesis focused on system-side optimizations for \textbf{distributed temporal\footnote{Graphs whose structure and attributes evolve over time} graph analytics}.
-Despite their growing availability, existing abstractions and frameworks do not scale well due to redundant computing and/or messaging across time-points.
-We address this gap through \textbf{\graphite[3]}, which uses time-interval as the data-parallel unit of computation.
-\graphite relies on our novel time-warp operator, which automatically partitions a vertex’s temporal state, and temporally aligns and groups messages to these states. This eases the temporal reasoning required by the user logic, and avoids redundant execution of user logic and messaging within an interval to provide key performance benefits.
-This work was published in \textbf{ICDE 2020} and is currently used at IISc, IIT-Jodhpur, and IIIT-Hyderabad for contact tracing and analytics over temporal graphs\footnote{\url{https://covid19.iisc.ac.in/gocoronago-contact-tracing-app-and-network-analytics/}}.
-\textbf{\wave[4]}, an extension of \graphite, incorporates \textbf{dependency-driven incremental processing} by tracking dependencies to capture how intermediate values get computed, and then uses this information to incrementally propagate the impact of change across intermediate values.
-\wave was presented at the \textbf{2nd ACM Student Research Competition (Graduate Category)} co-located with SOSP 2019. Out of the 15 participating submissions, \wave was one of the 5 finalists and subsequently awarded the Bronze Medal.
-
+My connection to University of Alberta began when I was admitted to transfer after my first year, and I now seek to join the Master of Computer Science program with enhanced research experience, work experience and clear goals: to bridge my systems expertise from Huawei's AI infrastructure and HCI publications with deeper machine learning knowledge under faculty like Prof. Sutton (reinforcement learning), Prof. White (efficient systems) and others. The program's balance of theoretical rigor and practical application perfectly supports my transition from implementing models to designing innovative ML models, as I aim to both master foundational algorithms through coursework and gain hands-on model design experience through thesis research targeting top-tier conferences (NeurIPS, ICLR, ICML). By combining my production-level development skills with University of Alberta's world-class ML curriculum, I will be positioned to contribute meaningful research while advancing from AI system optimization to algorithmic innovation.
 %% Non-research accomplishments (e.g. Grades, Academic Service, Work experience) (10-12 lines)
 
 % Grades
-I realize the need for a strong theoretical foundation to pursue advanced research. In this direction, I have always striven for academic excellence - I stood top of the class during both bachelor's and master's studies.
-% TA and Academic Service
-My time at IISc offered me opportunities to assist with two graduate courses, and participate in Artifact Evaluation Committee (AEC)\footnote{AEC SOSP 2019, OSDI 2020 and ASPLOS 2020} and Shadow Program Committee\footnote{Shadow PC EuroSys 2021 and 2022} at several conferences. These experiences have taught me how to organize and articulate ideas more effectively, participating in faux-PC discussion showed me how I can better interpret the subtext of reviews and comments before/after rebuttal, and seeing the difference between the submitted papers I reviewed and the accepted papers presented at EuroSys 2021 gave me insight into what the authors may have learned from reviewer feedback.
-% Industry
-The time I spent in the industry prior to and after attending graduate school helped me earn valuable soft skills - time management, team work and co-operation, which I believe are vital for survival in tough academic settings.
 
 %% Why this school? List professors you would like to work with and why? (10-12 Lines)
 
-I believe my experience with data-intensive systems at Microsoft Research has offered me a unique perspective into practical problems experienced by developers and cloud operators in deploying, operating, and monitoring computer systems at scale, and makes me uniquely qualified to tackle the big picture questions in this area.
-At \schoolShort, I would like to continue to work on efficient \textbf{systems infrastructure and tooling for emerging data-intensive workloads}.
-As machine learning models become larger and are increasingly used in safety and performance critical applications, demand for compute grows, and hardware accelerators evolve rapidly, I see this as an exciting area to work on from a number of angles such as performance, resiliency, resource-efficiency, and/or affordability.
-\schoolShort's demonstrated leadership in data-intensive systems research, its exemplary faculty, as well as unique inter-disciplinary atmosphere make it the ideal environment for me to conduct my graduate study.. 
-\textbf{\profOne}, \textbf{\profTwo}, and \textbf{\profThree} are faculty I would especially like to work with. Over the years, I have been influenced by several of their research works on new approaches and programming models for cloud-computing, frameworks for efficient deep learning training, and real-time model serving (e.g., Spark, Snorkel, Shinjuku, PipeDream, ROC, INFaaS, GNNAutoScale, GraphSAGE), and some of the insights I have been able to draw from these works have become a natural part of my master's thesis and research papers. An opportunity to work with them, is extremely appealing to me as a budding systems researcher.
+
 
 %% Summary (3-4 Lines)
-
-In summary, I believe I bring with me research experience, industry-sharpened programming and soft skills, and above all, an insatiable desire to learn and excel. I look forward to the next milestone in my life -- a PhD in Computer Science from \school. 
 
 % Add some blank space between text and references
 \vspace{0.125in}
@@ -121,15 +131,12 @@ In summary, I believe I bring with me research experience, industry-sharpened pr
 
 % **NOTE**: There are better ways to manage citations in LaTeX, most notably using a bibTeX. I wanted to have greater control on how citations were spaced and formatted and therefore ended up hardcoding them here. Your mileage may wary!
 
-[1] \underline{Swapnil Gandhi}, Anand Padmanabha Iyer, ``P3: Distributed Deep Graph Learning at Scale'', In proceedings of the 15th USENIX Symposium on Operating Systems Design and Implementation
-(\textbf{OSDI 2021}), July 2021. \url{https://swapnilgandhi.com/papers/p3-osdi21.pdf}
+[1] Xia, Zhijie, et al. "RealityCanvas: Augmented Reality Sketching for Embedded and Responsive Scribble Animation Effects." Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology. 2023.
 
-[2] \underline{Swapnil Gandhi}, Anand Padmanabha Iyer, ``SURGEON: Fast \& Efficient DNN Inference Using Practical Early-Exit Networks'' (\textbf{On-going Project})
+[2] Liao, Jian, et al. "RealityEffects: Augmenting 3D Volumetric Videos with Object-Centric Annotation and Dynamic Visual Effects." Proceedings of the 2024 ACM Designing Interactive Systems Conference. 2024.
 
-[3] \underline{Swapnil Gandhi}, Yogesh Simmhan, ``An Interval-centric Model for Distributed Computing over Temporal Graphs'', In proceedings of the 36th IEEE International Conference on Data Engineering
-(\textbf{ICDE 2020}), Dallas, Texas, April 2020. \url{https://swapnilgandhi.com/papers/icm-icde20.pdf}
+[3] Xia, Zhijie, "Invesigate Android Permission System" Manuscript. 2023.
 
-[4] \underline{Swapnil Gandhi}, ``Wave: A Substrate for Distributed Incremental Graph Processing on Commodity Clusters'', 2nd ACM Student Research Competition (\textbf{SRC}) at 27th Symposium on Operating Systems Principles (\textbf{SOSP 2019}), Ontario, Canada, Oct 2019. \url{https://swapnilgandhi.com/papers/wave-sosp19.pdf}
 
 \end{document}
 
